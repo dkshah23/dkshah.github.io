@@ -1,0 +1,49 @@
+<html>
+<body style="text-align: center">
+<title>HTML LAB EXERCISE 3</title>
+<h2 style="text-align: center;background-color: orange;">DEEP SHAH_180020107063_SEM-6</h2>    
+<h1 style="text-align: center;background-color: lawngreen;" >BULB LIGHTS USING JAVA SCRIPT</h1>
+<style>
+    .Yellow:hover{
+        background-color: yellow;
+        color:floralwhite;
+    }
+    .Red:hover{
+        background-color: red;
+        color:floralwhite;
+    }
+    .Blue:hover{
+        background-color: blue;
+        color: floralwhite;
+    }
+</style>
+<script>
+function light(sw) {
+  var pic;
+  if (sw  == 1) {
+    pic = "https://images-na.ssl-images-amazon.com/images/I/61eHm2MCzKL._SX342_.jpg"
+  }
+  else if (sw == 2){
+    pic = "https://images-na.ssl-images-amazon.com/images/I/61gnvT0-KyL._SL1500_.jpg"
+  }
+    else if (sw == 3){
+    pic="https://m.media-amazon.com/images/I/61WK3SUynEL._SL1500_.jpg"
+    }
+    else{
+       pic="https://images-na.ssl-images-amazon.com/images/I/61c28r8niZL._SX342_.jpg" 
+    }
+  document.getElementById('myImage').src = pic;
+}
+</script>
+
+<img id="myImage" src="https://images-na.ssl-images-amazon.com/images/I/61eHm2MCzKL._SX342_.jpg" width="170" height="300">
+
+<p>
+<button type="button" onclick="light(1)" class="White">White light</button>
+<button type="button" onclick="light(2)" class="Yellow">Yellow light</button>
+<button type="button" onclick="light(3)" class="Red">Red light</button>
+<button type="button" onclick="light(4)" class="Blue">Blue light</button>
+</p>
+
+</body>
+</html>
