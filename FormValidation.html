@@ -1,0 +1,290 @@
+<html>
+<head>
+    <style>
+        body
+        {
+            background-image: url('https://www.solidbackgrounds.com/images/2560x1440/2560x1440-deep-sky-blue-solid-color-background.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;   
+        }
+        
+          
+         .main_portion h1
+        {
+            text-align: center;
+            text-decoration: underline;
+            padding: 20px 0px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: black;
+            border: 5px solid black;
+        }
+
+        .main_form
+        {
+            border: 5px solid;
+            padding:20px 150px;     
+        }
+        
+        input
+        {
+            width: 800px;
+            height: 40px;
+            text-align: center;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+            font-size: 20px;
+            border: 2px solid black;
+        }
+        
+        p
+        {
+            font-size: 15px;
+           
+        }
+        li
+        {
+            line-height: 5px;
+            font-size: 10px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        h2
+        {
+            margin: 0px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        #btn
+        {
+            width: 300px;
+            position: relative;
+            top:15px;
+            left: 35%;
+            background-color: black;
+            color:white;
+            border: 0px;  
+        }
+        
+        #btn:hover
+        {
+            background-color: orangered;
+            border: 2px solid black;
+        }
+        
+        #btn_link
+        {
+            width: 200px;
+            position: relative;
+            left: 33%;
+            font-size: 20px;
+            margin: 10px;
+            background-color: black;
+            color:white;
+            border: 0px;  
+        }
+        
+        #btn_link:hover
+        {
+            background-color: orangered;
+            border: 2px solid black;
+
+        }
+    </style>
+</head>
+    <body>
+        <div class="main_portion">
+    <H1>FORM VALIDATION</H1>
+        </div>
+        
+
+        <div class="main_form">
+        <form >
+
+            <h2>First Name</h2>
+            <input type="text" id="f_name" placeholder="FIRST NAME">
+            <ul>
+                <li><P>Name cannot contain Number nor Symbol</P></li>
+            </ul>
+            <br>
+
+
+            <h2>Last Name</h2>
+            <input type="text" id="l_name" placeholder="LAST NAME">
+            <ul>
+                <li><P>Name cannot contain Number nor Symbol</P></li>
+            </ul>
+            <br>
+
+
+            <h2>Phone Number</h2>
+            <input type="text" id="Phone_Number" placeholder="PHONE NUMBER">
+           
+             <ul>
+                <li><P>Number must starts with 6-9 and must be of 10 digit.</P></li>
+            </ul>
+            <br>
+
+
+            <h2>Present Address</h2>
+            <input type="text" id="present_add" placeholder="PRESENT ADDRESS">
+            <br><br>
+            <input type="checkbox" id="check_it" onclick="on_checked()" style="width: 20px;">
+            <label style="position: relative;bottom: 15px;"> Same as above.</label>
+            <br><br>
+
+
+            <h2>Temporary Address</h2>
+            <input type="text" id="Temp_Address" placeholder="TEMPORARY ADDRESS">
+            <ul>
+                <li><P>If Temporary Address is same as Present Address select checkbox.</P></li>
+            </ul>
+            <br>
+
+
+            <h2>E-mail Address</h2>
+            <input type="text" id="e_mail" placeholder="EMAIL ID">
+             <ul>
+                <li><P>E-mail Address should not end with @, _ or Number.</P></li>
+            </ul>
+            <br>
+            
+            
+            <h2>Password</h2>
+            <input type="password" id="pass" placeholder="PASSWORD">
+            
+            <ul id="instr">
+                <li><p>Password must contain UPPERCASE(A~Z).</p></li>
+                <li><p>Password must contain LOWERCASE(a~z).</p></li>
+                <li><p>Password must contain NUMBER(0~9).</p></li>
+                <li><p>Password must contain SYMBOLS(@,?,#,$).</p></li>
+                <li><p>Password length must be 6 to 12 in length.</p></li>
+            </ul>
+
+
+            <h2>Re-Password</h2>
+            <input type="password" id="re-pass" placeholder="RE-PASSWORD">
+            <ul>
+                <li><P>Re-Password must be same as original Password.</P></li>
+            </ul>
+
+            <input type="submit" id="btn" onclick="return fill_form()">
+        </form>
+        </div>
+
+        <a href="#"><input type="button" value="<< PREVIOUS" id="btn_link"></a>
+        <a href="#"><input type="button" value="NEXT >>" id="btn_link"></a>
+    </body>
+    <script>
+        function fill_form()
+        {
+            var ret = true;
+            
+            var first_name = document.getElementById("f_name").value;
+            var reg1 = /^([A-Z a-z]+)$/;
+            if(reg1.test(first_name))
+                {
+                    document.getElementById("f_name").style.border = "2px solid green";
+                   
+                }
+            else
+                {
+                    document.getElementById("f_name").style.border = "2px solid red";
+                    ret = false;
+                }
+            
+            
+            //LAST NUMBER
+            var  last_name = document.getElementById("l_name").value;
+            if(reg1.test(last_name))
+                {
+                    document.getElementById("l_name").style.border = "2px solid green";
+                    
+                }
+            else
+                {
+                    document.getElementById("l_name").style.border = "2px solid red";
+                    ret=false;
+                }
+            
+            //PHONE NUMBER
+            
+            var phone_value = document.getElementById("Phone_Number").value;
+            var reg6 = /([6-9])([0-9]{9})/
+            
+            if(reg6.test(phone_value))
+                {
+                    document.getElementById("Phone_Number").style.border = "2px solid green";
+                
+                    
+                }
+              else
+                {
+                    document.getElementById("Phone_Number").style.border = "2px solid red";
+                      ret=false;
+                    
+                }
+            
+            
+            //EMAIL ID
+             var reg = /^([a-z 0-9 \.]+)@([a-z 0-9]+).([a-z]{2,20})$/;
+            var email_val = document.getElementById("e_mail").value;
+            
+            if(reg.test(email_val))
+                {
+                    document.getElementById("e_mail").style.border = "2px solid green";
+                   
+                }
+            else
+            {
+               document.getElementById("e_mail").style.border = "2px solid red";
+                
+                ret = false;
+            }
+            
+            
+            
+            
+            //PASSWORD
+            var reg2= /[A-Z]/;
+            var reg3= /[a-z]/;
+            var reg4= /[0-9]/;
+            var reg5= /[(@ . \\ | " ! # $ % ^ & * , + - _ < > ? ~)]/;
+            var pass_value = document.getElementById("pass").value;
+             if( reg2.test(pass_value) && reg3.test(pass_value) && reg4.test(pass_value) && reg5.test(pass_value) && pass_value.length>=6 && pass_length<=12)
+                {
+                    document.getElementById("pass").style.border = "2px solid green";
+                    
+                  
+                }
+            else
+                {
+                    document.getElementById("pass").style.border = "2px solid red";
+                   ret=false;
+                    
+                }
+            
+            //RE-PASSWORD
+            var repass_value= document.getElementById("re-pass").value;
+            if(repass_value == pass_value)
+                {
+                    document.getElementById("re-pass").style.border = "2px solid green";
+                return ret;
+                   
+                }
+            else
+                {
+                    document.getElementById("re-pass").style.border = "2px solid red";
+                      ret=false;
+                    return ret;
+                   
+                }
+            
+        }
+        
+        function on_checked()
+        {
+                    var temp =  document.getElementById("present_add").value;
+                    document.getElementById("Temp_Address").value = temp;
+                
+        }
+        
+    </script>
+</html>
