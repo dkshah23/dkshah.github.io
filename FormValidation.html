@@ -3,7 +3,7 @@
     <style>
         body
         {
-            background-image: url('https://www.solidbackgrounds.com/images/2560x1440/2560x1440-deep-sky-blue-solid-color-background.jpg');
+            background-image: url('https://static.vecteezy.com/system/resources/previews/000/555/922/non_2x/vector-abstract-white-and-gray-hexagon-background-paper-cut-style.jpg');
             background-repeat: no-repeat;
             background-size: cover;   
         }
@@ -15,8 +15,11 @@
             text-decoration: underline;
             padding: 20px 0px;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            color: black;
+            color: white;
             border: 5px solid black;
+            background-image: url('https://static.vecteezy.com/system/resources/previews/001/225/154/non_2x/black-low-poly-geometric-background-vector.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;   
         }
 
         .main_form
@@ -87,18 +90,27 @@
             border: 2px solid black;
 
         }
+
+        input{
+            background-image: url('https://static.vecteezy.com/system/resources/previews/001/225/154/non_2x/black-low-poly-geometric-background-vector.jpg');
+        }
+
+        .main_form input::placeholder{
+            color: white;
+            opacity: 0.8;
+        }
     </style>
 </head>
     <body>
         <div class="main_portion">
-    <H1>FORM VALIDATION</H1>
+    <H1>VALIDATION FORM</H1>
         </div>
         
 
         <div class="main_form">
         <form >
 
-            <h2>First Name</h2>
+            <h2>First Name:</h2>
             <input type="text" id="f_name" placeholder="FIRST NAME">
             <ul>
                 <li><P>Name cannot contain Number nor Symbol</P></li>
@@ -106,7 +118,7 @@
             <br>
 
 
-            <h2>Last Name</h2>
+            <h2>Last Name:</h2>
             <input type="text" id="l_name" placeholder="LAST NAME">
             <ul>
                 <li><P>Name cannot contain Number nor Symbol</P></li>
@@ -114,7 +126,7 @@
             <br>
 
 
-            <h2>Phone Number</h2>
+            <h2>Phone Number:</h2>
             <input type="text" id="Phone_Number" placeholder="PHONE NUMBER">
            
              <ul>
@@ -123,15 +135,15 @@
             <br>
 
 
-            <h2>Present Address</h2>
+            <h2>Present Address:</h2>
             <input type="text" id="present_add" placeholder="PRESENT ADDRESS">
             <br><br>
             <input type="checkbox" id="check_it" onclick="on_checked()" style="width: 20px;">
-            <label style="position: relative;bottom: 15px;"> Same as above.</label>
+            <label style="position: relative;bottom: 15px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;"> Same as above.</label>
             <br><br>
 
 
-            <h2>Temporary Address</h2>
+            <h2>Temporary Address:</h2>
             <input type="text" id="Temp_Address" placeholder="TEMPORARY ADDRESS">
             <ul>
                 <li><P>If Temporary Address is same as Present Address select checkbox.</P></li>
@@ -139,7 +151,7 @@
             <br>
 
 
-            <h2>E-mail Address</h2>
+            <h2>E-mail Address:</h2>
             <input type="text" id="e_mail" placeholder="EMAIL ID">
              <ul>
                 <li><P>E-mail Address should not end with @, _ or Number.</P></li>
@@ -147,7 +159,7 @@
             <br>
             
             
-            <h2>Password</h2>
+            <h2>Password:</h2>
             <input type="password" id="pass" placeholder="PASSWORD">
             
             <ul id="instr">
@@ -159,18 +171,16 @@
             </ul>
 
 
-            <h2>Re-Password</h2>
+            <h2>Re-Password:</h2>
             <input type="password" id="re-pass" placeholder="RE-PASSWORD">
             <ul>
                 <li><P>Re-Password must be same as original Password.</P></li>
             </ul>
 
-            <input type="submit" id="btn" onclick="return fill_form()">
+            <input type="submit" value="SUBMIT DETAILS" id="btn" onclick="alert('Your Details are Submitted.')">
         </form>
         </div>
 
-        <a href="#"><input type="button" value="<< PREVIOUS" id="btn_link"></a>
-        <a href="#"><input type="button" value="NEXT >>" id="btn_link"></a>
     </body>
     <script>
         function fill_form()
