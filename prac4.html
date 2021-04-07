@@ -1,0 +1,50 @@
+<html>
+<head>
+
+<title>INCREASING FONT</title>
+</head>
+<style>
+p {
+position: absolute;
+top: 40%;
+left: 50%;
+transform: translate(-50%, -50%);
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body{
+    background-color:dodgerblue;
+}
+
+h1{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 20px;
+}
+</style>
+</head>
+<body>
+    <h1>NAME: DEEP SHAH<br>
+        ENROLLMENT NO: 180020107063
+    </h1>
+<p id="demo"></p>
+<script>
+var var1 = setInterval(time, 600);
+var fs = 5;
+var a = document.getElementById("demo");
+function time() {
+a.innerHTML = '<b>AHMEDABAD INSTITUTE OF TECHNOLOGY</b>';
+a.setAttribute('style', "font-size: " + fs + "px; color:blue");
+fs += 5;
+if(fs >= 50 ){
+clearInterval(var1);
+}
+}
+
+</script>
+</body>
+</html>
+
+
+	
+	
+	
