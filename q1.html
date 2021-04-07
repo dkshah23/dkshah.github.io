@@ -1,0 +1,214 @@
+<HTML>
+<HEAD>
+    <TITLE>NUMBERS WITH JS</TITLE>
+     <style>
+       body {
+                background-image: url("https://cdn4.vectorstock.com/i/1000x1000/59/53/abstract-white-and-blue-bg-vector-8855953.jpg");
+                background-repeat: no-repeat;
+                background-size:cover;
+                background-attachment:fixed;
+                margin: 0px;
+        }
+        
+         .main_portion h1
+         {
+            text-align: center;
+            width: 100%;
+            text-decoration: underline;
+            margin: 0px;
+            padding: 70px 0px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+         }
+         .enter_number 
+         {
+             border: 3px solid;
+             width: 300px;
+             height: 150px;
+             text-align: center;
+             position: relative;
+             left:38%;
+             top:-40px;
+             display: flex;
+             flex-direction: column;
+             padding: 10px 10px;
+             box-shadow: 1px 5px 15px Black;
+             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+         }
+         
+         .enter_number #num
+         {
+             padding: 5px;
+             margin: 5px;
+             width: 100px;
+             text-align: center;
+             position: absolute;
+            left: 100px;
+            top: 70px;
+            border: 2px solid black;
+         }
+         
+         .enter_number #btn
+         {
+             margin: 5px;
+             padding: 10px 0px;
+             border: none;
+             text-transform: uppercase;
+             background-color:dodgerblue;
+             color: black;
+             letter-spacing: 5px;
+             position: absolute;
+            left: 50px;
+            top: 110px;
+            width: 200px;
+            border: 2px solid black;
+             
+         }
+         
+         .enter_number #btn:hover
+         {
+             background-color: rgba(0,0,0,0.6);
+             text-decoration: underline;
+
+         }
+         
+         .values
+         {
+             border: 1px solid;
+             width: 450px;
+             height: 150px;
+             position: relative;
+             left: 440px;;
+             top:-50px;
+             padding: 10px;
+             line-height: 40px;
+             box-shadow: 1px 5px 15px Black;
+             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+             border: 3px solid black;
+         }
+         
+         .a{
+            background-color: dodgerblue;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            position: absolute;
+            top: 520px;
+            text-align: center;
+            width: 1370px;
+            border: 3px solid black;
+        }    
+         </style>
+    </HEAD>
+    <BODY>
+
+        
+        
+        <div class="main_portion">
+            <h1>CHECK YOUR NUMBER</h1>
+        </div>
+        <div class="enter_number">
+        <H2>ENTER A NUMBER</H2>
+        <input type="number" id ="num">
+        <input type="button" onclick="check()" value="enter" id="btn">
+        </div>
+        <br><br>
+        <div class="values">
+        <label>POSITIVE / 0 / NEGATIVE = </label>
+            <label id="v1">****</label>
+        <br>
+        <label>EVEN / ODD = </label>
+        <label id="v2">***</label>
+            <br>
+        <label>PRIME or NOT = </label>
+        <label id="v3">***</label>
+        <br>
+        <label>DIVISIBLE BY (B/W 1-10) = </label>
+            <label id="v4">***</label>
+        </div>
+    </BODY>
+
+    <footer>
+        <h1 class="a">NAME: DEEP SHAH<BR>
+        ENROLLMENT NO: 180020107063</h1>
+    </footer>
+
+
+    <script>
+        function check()
+        {
+            var a = document.getElementById("num").value;
+            //0,POSITIVE,NEGATIVE
+            if(a==0)
+                {
+                   document.getElementById("v1").innerHTML=" 0 "; 
+                }
+            else if(a>0)
+                {
+                    document.getElementById("v1").innerHTML=" POSITIVE ";
+                  
+                }
+            else
+                {
+                    document.getElementById("v1").innerHTML=" NEGATIVE ";
+                }
+            
+//            //EVEN or ODD
+              if(a%2==0)
+                        {
+                            document.getElementById("v2").innerHTML=" EVEN ";
+                          
+                            
+                        }
+                 else
+                        {
+                            document.getElementById("v2").innerHTML=" ODD ";
+                        }
+            
+//            
+//            //PRIME
+            var prime;
+            if (a==1 || a==2)
+                {
+                    document.write(a+" IS PRIME NUMBER");
+                }
+            else
+            {
+                for(var i=2;i<a;i++)
+                    {
+                        if(a%i==0)
+                            {
+                                prime="no";
+                                break;
+                            }
+                        else{
+                            prime="yes";
+                        }
+                    }
+                
+                if(prime=="yes")
+                    {
+                        document.getElementById("v3").innerHTML=" PRIME NUMBER";
+                    }
+                else
+                    {
+                        document.getElementById("v3").innerHTML=" NOT A PRIME NUMBER";
+                    }
+            }
+            var an="";
+            
+            if(a%1==0){an=an + " 1 "}
+            if(a%2==0){an=an + " 2 "}
+            if(a%3==0){an=an + " 3 "}
+            if(a%4==0){an = an +" 4 "}
+            if(a%5==0){an = an +" 5 "}
+            if(a%6==0){an = an +" 6 "}
+            if(a%7==0){an = an +" 7 "}
+            if(a%8==0){an = an +" 8 "}
+            if(a%9==0){an = an +" 9 "}
+            if(a%10==0){an = an +" 10 "}
+            
+            document.getElementById("v4").innerHTML=an;
+            
+            
+        }
+    </script>
+
+</HTML>

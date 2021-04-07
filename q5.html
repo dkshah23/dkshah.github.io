@@ -1,0 +1,132 @@
+<HTML>
+<HEAD>
+    <title>VIDEO GRAPHICS</title>
+</HEAD>
+     <link rel="stylesheet" type="text/css" href="Font/all.css">
+    <STYLE>
+        body
+        {
+            margin: 0px;
+/*            background-color: black;*/
+                background-image: url("https://cdn4.vectorstock.com/i/1000x1000/59/53/abstract-white-and-blue-bg-vector-8855953.jpg");
+                background-repeat: no-repeat;
+                background-size:cover;
+                background-attachment:fixed;
+                margin: 0px;
+        }
+        
+        #video1
+        {
+            margin: auto 0px;
+            position: relative;
+            left:485px;
+            top:0px;
+            width: 400px;
+           box-shadow: 1px 1px 10px black;
+            
+        }
+
+        #video2
+        {
+            margin: auto 0px;
+            position: relative;
+            left:485px;
+            top:0px;
+            width: 400px;
+           box-shadow: 1px 1px 10px black;
+            
+        }
+
+        #audio1{
+            position: absolute;
+            left:520px;
+            border:2px solid dodgerblue;
+            box-shadow: 1px 1px 10px;
+        }
+
+        .btn
+        {
+            position: absolute;
+            left:610px;
+        }
+      
+        h1{
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: dodgerblue;
+            text-align: center;
+            text-decoration:underline;
+        }
+
+        input{
+            background-color: dodgerblue;
+            width: 80px;
+            height: 30px;
+            border: 2px solid black;
+        }
+
+        input:hover{
+            background-color: white;
+            color: black;
+            transition: 0.5s ease;
+        }
+   
+        
+    </STYLE>
+</HEAD>
+    <BODY>
+        
+<!--
+        <iframe width="853" height="480" src="https://www.youtube.com/embed/6DcQOjkp0Es" id="vid1"></iframe>
+        
+        <input type="button" value="stop" id="stp" onclick="stop_vid1()">
+    </BODY>
+<SCRIPT>
+    function  stop_vid1()
+    {
+      var x = document.getElementById("vid1");
+        x.stop();
+    }
+    
+    
+    </SCRIPT>
+-->
+        
+        <h1>INTERNAL VIDEO EMBEDDED</h1>
+        <video id="video1">
+            <source src="Into The Nature - Cinematic Travel Video Sony a6300.mp4" type="video/mp4">
+        </video>
+        <br><br>
+        <div class="btn">
+        <input type="button" onclick="video_stop()" value="STOP" title="STOP">    
+        <input type="button" onclick="video_start()" value="PLAY" title="PLAY">
+    </div><br>
+        <h1>EXTERNAL VIDEO EMBEDDED</h1>
+        
+        <iframe width="853" height="480" src="https://www.youtube.com/embed/WQ3Pcd1I1Ks" style="width: 400px; height: 230px ;" id="video2" 
+         title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        
+         <h1>AUDIO EMBEDDED</h1>
+         
+         <audio controls id="audio1">
+            <source src="Maroon_5_-_Memories_(Official_Video)(128k).mp3" type="audio/mp3">
+        </audio>
+
+    </BODY>
+    <script>
+         var x = document.getElementById("video1");
+       
+        function video_stop()
+        {
+            x.pause();
+            
+            
+        }
+    
+        function video_start()
+        {
+            x.play();
+        }
+
+        
+    </script>
+</HTML>

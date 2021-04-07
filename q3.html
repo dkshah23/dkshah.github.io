@@ -1,0 +1,328 @@
+<HTML>
+<head>
+    <title>TEMPERATURE CONVERTOR</title>
+    <style>
+        
+        body
+        {background-image: url("https://cdn4.vectorstock.com/i/1000x1000/59/53/abstract-white-and-blue-bg-vector-8855953.jpg");
+                background-repeat: no-repeat;
+                background-size:cover;
+                background-attachment:fixed;
+                margin: 0px;
+        }
+        
+        .index_box a
+        {
+            text-decoration: none;
+           
+            color: white;
+            padding:50px 40px;
+            width: 200px;
+        }
+        
+        .index_box a:hover
+        {
+            background-color: grey;
+        }
+        
+        
+        .main_box
+        {
+            border: 5px solid BLACK;
+            padding: 20PX;
+            height: 300px;
+            width: 700px;
+            position: relative;
+            left: 330px;
+            top:150px;
+            background-color: rgba(0,0,0,0.2);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+/*
+            display: flex;
+            flex-direction: row;
+*/
+        }
+        
+        
+        .drop_down1
+        {
+/*            border: 1px solid BLACK;*/
+            height: 150PX;
+            width: 200PX;
+            padding: 2PX 10PX 10PX 20PX;
+            margin:0PX 50px;
+            position: relative;
+            TOP:0%;
+            border: 3px solid black;
+        }
+        .drop_down1 select
+        {
+            position: relative;
+            top:40%;
+            padding:10px 55px;
+           
+        }
+        
+        .drop_down1 input
+        {
+            position: relative;
+            top:45%;
+            padding:10px 30px;
+            text-align: center;
+        }
+        
+        .drop_down2 
+        {
+            position: relative;
+            left:55%;
+            bottom: 64%;
+/*            border: 1px solid BLACK;*/
+             height: 150PX;
+            width: 200PX;
+            padding: 2PX 10PX 10PX 20PX;
+            margin:10PX 0px;
+            border: 3px solid black;
+        }
+        
+        .drop_down2 select
+        {
+             position: relative;
+            top:40%;
+            padding:10px 55px;
+        }
+        
+        .drop_down2 h3
+        {
+            position: relative;
+            top:35%;
+            left:50px;
+            font-size: 30px;
+        }
+            #btn
+            {
+               height: 30px; 
+                width: 400px;
+                position: relative;
+                top:90%;
+                right: 59%;
+                padding: 5PX 70PX;
+            }
+        .main_box h1
+        {
+
+            margin: 0px;
+            padding: 10px;
+            text-align: center;
+        }
+        .from
+        {
+            margin: 0px;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+            font-size: 10px 20px;
+            text-decoration-line: underline;
+            position: relative;
+            left:10%;
+            top: 18%;
+            letter-spacing: 1px;
+            
+        }
+        .to
+        {
+            margin: 0px;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+            font-size: 10px 20px;
+            text-decoration-line: underline;
+            position: relative;
+            left:60%;
+            bottom: 42.5%;
+            letter-spacing: 1px;
+            
+        }
+        
+        #btn
+        {
+            position: absolute;
+            top: 85%;
+            left:25%;
+            background-color: dodgerblue;
+            color: black;
+            border: 3px solid black;
+            
+        }
+
+        #btn:hover{
+            background-color: white;
+            color: black;
+        }
+        #line
+        {
+            position: relative;
+            bottom:5%;
+            margin:0px 40px;
+        }
+        
+        #img1
+        {
+            width: 40px;
+            position: relative;
+            bottom:60%;
+            
+        }
+
+        .b{
+            background-color: dodgerblue;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            position: absolute;
+            top: 520px;
+            text-align: center;
+            width: 1370px;
+            border: 3px solid black;
+        }   
+        
+    </style>
+</head>
+    <body>
+        
+        <div class="main_box">
+            <H1 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;"><u>TEMPERATURE CONVERTOR</u></H1>
+            <h4 class="from">From:</h4>
+        <div class="drop_down1">
+        <select id="fromConvert">
+            <option value="1">CELSIUS</option>
+            <option value="2">KELVIN</option>
+            <option value="3">FARENHEIT</option>
+        </select>
+            <br>
+            <input type="number" placeholder="00" id="numberA">
+        </div>
+            <h4 class="to">To:</h4>
+         <div class="drop_down2">
+        <select id="toConvert">
+            <option value="1">CELSIUS</option>
+            <option value="2">KELVIN</option>
+            <option value="3">FARENHEIT</option>
+        </select>
+             <h3 id="main_box">RESULT</h3>
+        </div>
+    
+        <input type="button" id="btn" onclick="fun1()" value="CONVERT">
+<!--        <button id="btn" onclick="fun1()">CONVERT</button>-->
+              </div>
+        
+  
+        
+        <script>
+           
+        function convert()
+{ 
+   var k= document.getElementById('kelvin').value;
+    var c = k-273.15;
+    document.getElementById('box1').innerHTML=c;
+}
+ function convert1()
+{
+    var c =document.getElementById('ctknumber').value;
+    var k =273.15 -(- c);
+    document.getElementById('box2').innerHTML=k;
+
+}
+function convert2()
+{
+    var k =document.getElementById('ctfnumber').value;
+    var f =(k-273.15)*9/5 +32;
+    document.getElementById('box3').innerHTML=f;
+}
+            
+function convert3()
+{
+    var c =document.getElementById('ctfnumber').value;
+    var f = (c * 9/5) +32;
+    document.getElementById('box4').innerHTML=f;
+}
+function convert4()
+{
+    var f =document.getElementById('ftknumber').value;
+    var k = (f-32) * 5/9 +32;
+    document.getElementById('box5').innerHTML=k;
+}
+
+function convert5()
+{
+    var f =document.getElementById('ftknumber').value;
+    var c = (f-32) * 5/9;
+    document.getElementById('box6').innerHTML=c;
+}
+
+            
+//MAIN FUNCTION 
+function fun1()
+{
+    var v1=document.getElementById('fromConvert').value;
+    
+    var v2=document.getElementById('toConvert').value;
+    
+    convert6(v1,v2);
+}
+
+function convert6(v1,v2)
+    {
+        if(v1==1) //CELSIUS
+            {
+               if(v2==2)///KELVIN
+                   {
+                       var c =document.getElementById('numberA').value;
+                        var k =273.15 -(- c);
+                        document.getElementById('main_box').innerHTML=k;
+                       
+                     
+                   }
+                if(v2==3)//FARENHEIT
+                    {
+                        var c =document.getElementById('numberA').value;
+                        var f = (c * 9/5) +32;
+                        document.getElementById('main_box').innerHTML=f;
+                    }
+            }
+        if(v1==2)//KELVIN
+            {
+               if(v2==1)//CELSIUS
+                   {
+                        var k= document.getElementById('numberA').value;
+                       var c = k-273.15;
+                       document.getElementById('main_box').innerHTML=c;
+                   }
+                if(v2==3)//FARENHEIT
+                    {
+                        var k =document.getElementById('numberA').value;
+                        var f =(k-273.15)*9/5 +32;
+                        document.getElementById('main_box').innerHTML=f;
+                    }
+            }
+        if(v1==3)//FARENHEIT
+            {
+               if(v2==1)//CELSIUS
+                   {
+                       var f =document.getElementById('numberA').value;
+                        var c = (f-32) * 5/9;
+                        document.getElementById('main_box').innerHTML=c;
+                   }
+                if(v2==2)//KELVIN
+                    {
+                         var f =document.getElementById('numberA').value;
+                        var k = (f-32) * 5/9 +32;
+                        document.getElementById('main_box').innerHTML=k;
+                    }
+            }
+        
+            
+    }
+    
+
+        
+        </script>
+    </body>
+    <footer>
+        <h1 class="b">NAME: DEEP SHAH<BR>
+        ENROLLMENT NO: 180020107063</h1>
+    </footer>
+</HTML>
